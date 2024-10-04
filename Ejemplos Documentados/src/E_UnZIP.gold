@@ -14,6 +14,11 @@
 //   By default  A = ('a' ‥ 'e'), it can be changed invoking the program with a string  of symbols. 
 //   A  will contain all the the symbols in the string
 //  
+// Ejemplos validos: a4b3c2$, $, abc$
+// Respuestas esperadas: aaaabbbcc$, $, abc$
+// Ejemplos invalidos: aabc$, aba
+// 
+
 using gold.**
 
 var A

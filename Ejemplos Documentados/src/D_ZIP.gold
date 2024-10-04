@@ -9,9 +9,13 @@
 //  Produces a string where sequential substrings of length 2‥5 of the same symbol are
 //  replaced the the repeating symbol followed by the number of repeats
 //    
-//   By default  A = ('a' ‥ 'e'), it can be changed invoking the program with a string  of symbols. 
+//   By default  A = ('a' ‥ 'c'), it can be changed invoking the program with a string  of symbols. 
 //   A  will contain all the the symbols in the string
 //  
+// Ejemplos validos: aaaabbbcc$, $, abc$
+// Respuestas esperadas: a4b3c2$, $, abc$
+// Ejemplos invalidos: abbaca
+// 
 using gold.**
 
 

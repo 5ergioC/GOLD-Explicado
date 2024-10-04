@@ -14,7 +14,7 @@ public final class B_CountCats {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=15;
+      $line=17;
       GAutomataFrame.show($cast(gold.structures.automaton.IAutomaton.class,B_CountCats.createAutomaton()));
     }
     catch (Throwable $throwable) {
@@ -25,48 +25,48 @@ public final class B_CountCats {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=19;
+      $line=21;
       Object \u03A3=$fix(GCollections.asSet('c','a','t','1'));
-      $line=20;
+      $line=22;
       Object Q=$fix(GCollections.asSet(0,1,"c","ca"));
-      $line=23;
-      Object \u0393=$fix(GCollections.asSet('1'));
       $line=25;
-      Object q_0=$fix(0);
-      $line=26;
-      Object F=$fix(GCollections.asSet(1));
+      Object \u0393=$fix(GCollections.asSet('1'));
       $line=27;
+      Object q_0=$fix(0);
+      $line=28;
+      Object F=$fix(GCollections.asSet(1));
+      $line=29;
       Object M=$fix($invokeConstructor(GPushdownAutomaton.class,new Object[]{Q,\u03A3,\u0393,q_0,F}));
-      $line=30;
-      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta(0,0,$cast(java.lang.String.class,'a')),new Object[]{});
-      $line=31;
-      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta(0,"c",$cast(java.lang.String.class,'c')),new Object[]{});
       $line=32;
-      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta(0,0,$cast(java.lang.String.class,'t')),new Object[]{});
+      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta(0,0,$cast(java.lang.String.class,'a')),new Object[]{});
       $line=33;
-      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta(0,1,$cast(java.lang.String.class,"")),new Object[]{});
+      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta(0,"c",$cast(java.lang.String.class,'c')),new Object[]{});
+      $line=34;
+      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta(0,0,$cast(java.lang.String.class,'t')),new Object[]{});
       $line=35;
-      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta("c","c",$cast(java.lang.String.class,'c')),new Object[]{});
-      $line=36;
-      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta("c",0,$cast(java.lang.String.class,'t')),new Object[]{});
+      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta(0,1,$cast(java.lang.String.class,"")),new Object[]{});
       $line=37;
-      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta("c","ca",$cast(java.lang.String.class,'a')),new Object[]{});
+      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta("c","c",$cast(java.lang.String.class,'c')),new Object[]{});
       $line=38;
-      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta("c",1,$cast(java.lang.String.class,"")),new Object[]{});
+      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta("c",0,$cast(java.lang.String.class,'t')),new Object[]{});
+      $line=39;
+      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta("c","ca",$cast(java.lang.String.class,'a')),new Object[]{});
       $line=40;
-      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta("ca","c",$cast(java.lang.String.class,'c')),new Object[]{});
-      $line=41;
-      $invokeMethod("push",((gold.structures.automaton.GPushdownAutomaton)M).delta("ca",0,$cast(java.lang.String.class,'t')),new Object[]{"1"});
+      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta("c",1,$cast(java.lang.String.class,"")),new Object[]{});
       $line=42;
-      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta("ca",0,$cast(java.lang.String.class,'a')),new Object[]{});
+      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta("ca","c",$cast(java.lang.String.class,'c')),new Object[]{});
       $line=43;
-      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta("ca",1,$cast(java.lang.String.class,"")),new Object[]{});
+      $invokeMethod("push",((gold.structures.automaton.GPushdownAutomaton)M).delta("ca",0,$cast(java.lang.String.class,'t')),new Object[]{"1"});
+      $line=44;
+      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta("ca",0,$cast(java.lang.String.class,'a')),new Object[]{});
       $line=45;
+      $invokeMethod("ignore",((gold.structures.automaton.GPushdownAutomaton)M).delta("ca",1,$cast(java.lang.String.class,"")),new Object[]{});
+      $line=47;
       $invokeMethod("pop",((gold.structures.automaton.GPushdownAutomaton)M).delta(1,1,$cast(java.lang.String.class,"1")),new Object[]{"1"});
-      $line=50;
+      $line=52;
       $result=M;
       if (true) break $try;
-      $line=51;
+      $line=53;
       $rethrow(new RuntimeException("The function \"createAutomaton()\" did not return a value."));
     }
     catch (Throwable $throwable) {

@@ -1,3 +1,9 @@
+// Automa que acepta cualquier string con el alfabeto {c,a,t} si tiene en algún lado "cat" 
+//
+// Ejemplos validos: accactcata, cat, acat
+// Ejemplos invalidos: caaaaccactta, c, at
+//
+
 // Import de las funciones de gold
 using gold.**
 

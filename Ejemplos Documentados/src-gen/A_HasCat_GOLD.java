@@ -53,9 +53,9 @@ public final class A_HasCat_GOLD {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=7;
+      $line=13;
       GAutomataFrame.show($cast(gold.structures.automaton.IAutomaton.class,A_HasCat_GOLD.createAutomaton()));
-      $line=9;
+      $line=15;
       Utilities.test($cast(gold.structures.automaton.IAutomaton.class,A_HasCat_GOLD.createAutomaton()));
     }
     catch (Throwable $throwable) {
@@ -66,20 +66,20 @@ public final class A_HasCat_GOLD {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=17;
-      Object Q=$fix(GCollections.asSet("_cat","c_at","ca_t","cat_"));
-      $line=20;
-      Object \u03A3=$fix(GCollections.asSet('c','a','t'));
       $line=23;
-      Object q_0=$fix("_cat");
+      Object Q=$fix(GCollections.asSet("_cat","c_at","ca_t","cat_"));
       $line=26;
+      Object \u03A3=$fix(GCollections.asSet('c','a','t'));
+      $line=29;
+      Object q_0=$fix("_cat");
+      $line=32;
       Object F=$fix(GCollections.asSet("cat_"));
-      $line=30;
+      $line=36;
       Object \u03B4=$fix(new Object[]{new Object[]{"_cat",'c',"c_at"},new Object[]{"_cat",'a',"_cat"},new Object[]{"_cat",'t',"_cat"},new Object[]{"c_at",'c',"c_at"},new Object[]{"c_at",'a',"ca_t"},new Object[]{"c_at",'t',"_cat"},new Object[]{"ca_t",'c',"c_at"},new Object[]{"ca_t",'a',"_cat"},new Object[]{"ca_t",'t',"cat_"},new Object[]{"cat_",'c',"cat_"},new Object[]{"cat_",'a',"cat_"},new Object[]{"cat_",'t',"cat_"}});
-      $line=44;
+      $line=50;
       $result=$invokeConstructor(GDeterministicAutomaton.class,new Object[]{Q,\u03A3,q_0,F,\u03B4});
       if (true) break $try;
-      $line=45;
+      $line=51;
       $rethrow(new RuntimeException("The function \"createAutomaton()\" did not return a value."));
     }
     catch (Throwable $throwable) {

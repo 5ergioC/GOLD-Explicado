@@ -6,6 +6,8 @@
 //  
 // Recognizes  L = {w1ˆn:  w in {c,a,t}*,  n  = #_cat(W))}  
 //
+// Ejemplos validos: cataaaccattcat111, cat1, aca
+// Ejemplos invalidos: cat, cccaaat11, cat11
 //
 
 using gold.structures.automaton.*

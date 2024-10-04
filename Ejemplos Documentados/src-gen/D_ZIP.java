@@ -54,13 +54,13 @@ public final class D_ZIP {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=24;
+      $line=28;
       if ($opEqualY($invokeField("length",args),0)) {
-        $line=24;
+        $line=28;
         A=$fix($opIntvlY('a','c'));
       }
       else {
-        $line=26;
+        $line=30;
         gold.structures.set.ISet $v1=$newSet();
         int $v3=$int(0);
         int $v4=$int($invokeMethod("length",((java.lang.String[])args)[$int(0)],new Object[]{}))-1;
@@ -69,11 +69,11 @@ public final class D_ZIP {
         }
         A=$fix($opDiffeY($v1,GCollections.asSet('$')));
       }
-      $line=30;
+      $line=34;
       Object zip=$fix(D_ZIP.createTransducer(A));
-      $line=31;
+      $line=35;
       GAutomataFrame.show($cast(gold.structures.automaton.IAutomaton.class,zip));
-      $line=32;
+      $line=36;
       Utilities.test($cast(gold.structures.automaton.IAutomaton.class,zip));
     }
     catch (Throwable $throwable) {
@@ -84,9 +84,9 @@ public final class D_ZIP {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=38;
+      $line=42;
       A=$fix(Alph);
-      $line=39;
+      $line=43;
       gold.structures.set.ISet $v5=$newSet();
       $v6:for (Object letter:GCollections.unmodifiableCollection(A)) {
         int $v7=$int(1);
@@ -96,18 +96,18 @@ public final class D_ZIP {
         }
       }
       Object Q=$fix($opUnionY($v5,GCollections.asSet("I","F")));
-      $line=40;
+      $line=44;
       Object \u03A3=$fix($opUnionY(A,GCollections.asSet('$')));
-      $line=43;
-      Object \u03A3_=$fix($opUnionY($opUnionY(A,$opIntvlY('2','5')),GCollections.asSet('$')));
-      $line=45;
-      Object q_0=$fix("I");
-      $line=46;
-      Object F=$fix(GCollections.asSet("F"));
       $line=47;
+      Object \u03A3_=$fix($opUnionY($opUnionY(A,$opIntvlY('2','5')),GCollections.asSet('$')));
+      $line=49;
+      Object q_0=$fix("I");
+      $line=50;
+      Object F=$fix(GCollections.asSet("F"));
+      $line=51;
       $result=$invokeConstructor(GDeterministicTransducer.class,new Object[]{Q,\u03A3,\u03A3_,q_0,F,new GMethod(D_ZIP.class,"d"),new GMethod(D_ZIP.class,"g"),new GMethod(D_ZIP.class,"h")});
       if (true) break $try;
-      $line=48;
+      $line=52;
       $rethrow(new RuntimeException("The function \"createTransducer(Alph:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -119,26 +119,26 @@ public final class D_ZIP {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=52;
+      $line=56;
       if ($opEqualY(q,"F")) {
-        $line=53;
+        $line=57;
         $result="F";
         if (true) break $try;
       }
       else {
-        $line=54;
+        $line=58;
         if ($opEqualY(\u03C3,'$')) {
-          $line=55;
+          $line=59;
           $result="F";
           if (true) break $try;
         }
         else {
-          $line=57;
+          $line=61;
           $result=GCollections.asList(\u03C3,1);
           if (true) break $try;
         }
       }
-      $line=59;
+      $line=63;
       $rethrow(new RuntimeException("The function \"d(q:Object,\u03C3:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -153,26 +153,26 @@ public final class D_ZIP {
       java.util.Iterator $v10=GCollections.unmodifiableCollection($v9).iterator();
       Object s=$v10.next();
       Object c=$v10.next();
-      $line=62;
+      $line=66;
       if ($opEqualY(a,'$')) {
-        $line=63;
+        $line=67;
         $result="F";
         if (true) break $try;
       }
       else {
-        $line=64;
+        $line=68;
         if (($bool($opEqualY(a,s))&&$bool($opLesstY(c,5)))) {
-          $line=65;
+          $line=69;
           $result=GCollections.asList(a,$opAdditY(c,1));
           if (true) break $try;
         }
         else {
-          $line=67;
+          $line=71;
           $result=GCollections.asList(a,1);
           if (true) break $try;
         }
       }
-      $line=69;
+      $line=73;
       $rethrow(new RuntimeException("The function \"d(\u27E8s,c\u27E9:java.lang.Iterable,a:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -184,10 +184,10 @@ public final class D_ZIP {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=72;
+      $line=76;
       $result="";
       if (true) break $try;
-      $line=73;
+      $line=77;
       $rethrow(new RuntimeException("The function \"g(q:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -199,18 +199,18 @@ public final class D_ZIP {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=79;
+      $line=83;
       if (($opEqualY(q,"I")&&$opEqualY(\u03C3,'$'))) {
-        $line=79;
+        $line=83;
         $result=\u03C3;
         if (true) break $try;
       }
       else {
-        $line=80;
+        $line=84;
         $result="";
         if (true) break $try;
       }
-      $line=83;
+      $line=87;
       $rethrow(new RuntimeException("The function \"h(q:Object,\u03C3:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -225,42 +225,42 @@ public final class D_ZIP {
       java.util.Iterator $v12=GCollections.unmodifiableCollection($v11).iterator();
       Object s=$v12.next();
       Object c=$v12.next();
-      $line=87;
+      $line=91;
       if (($opEqualY(a,'$')&&$opEqualY(c,1))) {
-        $line=88;
+        $line=92;
         $result=$opAdditY(s,"$");
         if (true) break $try;
       }
       else {
-        $line=89;
+        $line=93;
         if ($opEqualY(a,'$')) {
-          $line=90;
+          $line=94;
           $result=$opAdditY($opAdditY($invokeMethod(String.class,"valueOf",true,null,new Object[]{s}),$invokeMethod(String.class,"valueOf",true,null,new Object[]{c})),"$");
           if (true) break $try;
         }
         else {
-          $line=91;
+          $line=95;
           if (($bool($opEqualY(a,s))&&$bool($opLesstY(c,5)))) {
-            $line=92;
+            $line=96;
             $result="";
             if (true) break $try;
           }
           else {
-            $line=93;
+            $line=97;
             if ($opEqualY(c,1)) {
-              $line=94;
+              $line=98;
               $result=s;
               if (true) break $try;
             }
             else {
-              $line=95;
+              $line=99;
               $result=$opAdditY($invokeMethod(String.class,"valueOf",true,null,new Object[]{s}),$invokeMethod(String.class,"valueOf",true,null,new Object[]{c}));
               if (true) break $try;
             }
           }
         }
       }
-      $line=98;
+      $line=102;
       $rethrow(new RuntimeException("The function \"h(\u27E8s,c\u27E9:java.lang.Iterable,a:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {

@@ -54,13 +54,13 @@ public final class E_UnZIP {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=25;
+      $line=30;
       if ($opEqualY($invokeField("length",args),0)) {
-        $line=25;
+        $line=30;
         A=$fix($opIntvlY('a','c'));
       }
       else {
-        $line=27;
+        $line=32;
         gold.structures.set.ISet $v1=$newSet();
         int $v3=$int(0);
         int $v4=$int($invokeMethod("length",((java.lang.String[])args)[$int(0)],new Object[]{}))-1;
@@ -69,9 +69,9 @@ public final class E_UnZIP {
         }
         A=$fix($opDiffeY($v1,GCollections.asSet('$')));
       }
-      $line=32;
+      $line=37;
       Object unZip=$fix(E_UnZIP.createTransducer(A));
-      $line=34;
+      $line=39;
       Utilities.test($cast(gold.structures.automaton.IAutomaton.class,unZip));
     }
     catch (Throwable $throwable) {
@@ -82,22 +82,22 @@ public final class E_UnZIP {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=42;
-      A=$fix(Alph);
-      $line=43;
-      Object Q=$fix($opUnionY($opUnionY(GCollections.asSet("I","F","E"),A),$opCartsY(new Object[]{A,$opIntvlY(2,4)})));
-      $line=44;
-      Object \u03A3=$fix($opUnionY($opUnionY(A,$opIntvlY('2','5')),GCollections.asSet('$')));
-      $line=45;
-      Object \u03A3_=$fix($opUnionY(A,GCollections.asSet('$')));
-      $line=46;
-      Object q_0=$fix("I");
       $line=47;
-      Object F=$fix(GCollections.asSet("F"));
+      A=$fix(Alph);
       $line=48;
+      Object Q=$fix($opUnionY($opUnionY(GCollections.asSet("I","F","E"),A),$opCartsY(new Object[]{A,$opIntvlY(2,4)})));
+      $line=49;
+      Object \u03A3=$fix($opUnionY($opUnionY(A,$opIntvlY('2','5')),GCollections.asSet('$')));
+      $line=50;
+      Object \u03A3_=$fix($opUnionY(A,GCollections.asSet('$')));
+      $line=51;
+      Object q_0=$fix("I");
+      $line=52;
+      Object F=$fix(GCollections.asSet("F"));
+      $line=53;
       $result=$invokeConstructor(GDeterministicTransducer.class,new Object[]{Q,\u03A3,\u03A3_,q_0,F,new GMethod(E_UnZIP.class,"\u03B41"),new GMethod(E_UnZIP.class,"g"),new GMethod(E_UnZIP.class,"h1")});
       if (true) break $try;
-      $line=49;
+      $line=54;
       $rethrow(new RuntimeException("The function \"createTransducer(Alph:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -109,63 +109,63 @@ public final class E_UnZIP {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=52;
+      $line=57;
       if ($opMembrY(q,GCollections.asSet("E","F"))) {
-        $line=52;
+        $line=57;
         $result="E";
         if (true) break $try;
       }
       else {
-        $line=53;
+        $line=58;
         if ($opEqualY(s,'$')) {
-          $line=53;
+          $line=58;
           $result="F";
           if (true) break $try;
         }
         else {
-          $line=54;
+          $line=59;
           if (($opEqualY(q,"I")&&$opMembrY(s,$opIntvlY('2','5')))) {
-            $line=54;
+            $line=59;
             $result="E";
             if (true) break $try;
           }
           else {
-            $line=55;
+            $line=60;
             if ($opEqualY(q,"I")) {
-              $line=55;
+              $line=60;
               $result=s;
               if (true) break $try;
             }
             else {
-              $line=56;
+              $line=61;
               if (($opMembrY(q,A)&&$opEqualY(s,'5'))) {
-                $line=56;
+                $line=61;
                 $result="I";
                 if (true) break $try;
               }
               else {
-                $line=57;
+                $line=62;
                 if (($opMembrY(q,A)&&$opMembrY(s,$opIntvlY('2','4')))) {
-                  $line=57;
+                  $line=62;
                   $result=GCollections.asList(q,$opSubtrY(s,'0'));
                   if (true) break $try;
                 }
                 else {
-                  $line=58;
+                  $line=63;
                   if (($opMembrY(q,A)&&$opEqualY(s,q))) {
-                    $line=58;
+                    $line=63;
                     $result="E";
                     if (true) break $try;
                   }
                   else {
-                    $line=59;
+                    $line=64;
                     if (($opMembrY(q,A)&&$opMembrY(s,A))) {
-                      $line=59;
+                      $line=64;
                       $result=s;
                       if (true) break $try;
                     }
                     else {
-                      $line=60;
+                      $line=65;
                       $result="E";
                       if (true) break $try;
                     }
@@ -176,7 +176,7 @@ public final class E_UnZIP {
           }
         }
       }
-      $line=62;
+      $line=67;
       $rethrow(new RuntimeException("The function \"\u03B41(q:Object,s:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -191,34 +191,34 @@ public final class E_UnZIP {
       java.util.Iterator $v6=GCollections.unmodifiableCollection($v5).iterator();
       Object q=$v6.next();
       Object x=$v6.next();
-      $line=65;
+      $line=70;
       if ($opEqualY(s,'$')) {
-        $line=65;
+        $line=70;
         $result="F";
         if (true) break $try;
       }
       else {
-        $line=66;
+        $line=71;
         if ($opMembrY(s,$opIntvlY('2','5'))) {
-          $line=66;
+          $line=71;
           $result="E";
           if (true) break $try;
         }
         else {
-          $line=67;
+          $line=72;
           if ($opEqualY(s,q)) {
-            $line=67;
+            $line=72;
             $result="E";
             if (true) break $try;
           }
           else {
-            $line=68;
+            $line=73;
             $result=s;
             if (true) break $try;
           }
         }
       }
-      $line=70;
+      $line=75;
       $rethrow(new RuntimeException("The function \"\u03B41(\u27E8q,x\u27E9:java.lang.Iterable,s:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -230,49 +230,49 @@ public final class E_UnZIP {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=75;
+      $line=80;
       if (($opEqualY(q,"F")||$opEqualY(q,"E"))) {
-        $line=75;
+        $line=80;
         $result="";
         if (true) break $try;
       }
       else {
-        $line=76;
+        $line=81;
         if (($opEqualY(s,'$')&&$opMembrY(q,A))) {
-          $line=76;
+          $line=81;
           $result=$opAdditY(q,"$");
           if (true) break $try;
         }
         else {
-          $line=77;
+          $line=82;
           if ($opEqualY(s,'$')) {
-            $line=77;
+            $line=82;
             $result="$";
             if (true) break $try;
           }
           else {
-            $line=78;
+            $line=83;
             if ($opEqualY(q,"I")) {
-              $line=78;
+              $line=83;
               $result="";
               if (true) break $try;
             }
             else {
-              $line=79;
+              $line=84;
               if (($opMembrY(s,$opIntvlY('2','5'))&&$opMembrY(q,A))) {
-                $line=79;
+                $line=84;
                 $result=E_UnZIP.starN(q,$opSubtrY(s,'0'));
                 if (true) break $try;
               }
               else {
-                $line=80;
+                $line=85;
                 if (($opMembrY(q,A)&&!$opEqualY(s,q))) {
-                  $line=80;
+                  $line=85;
                   $result=q;
                   if (true) break $try;
                 }
                 else {
-                  $line=81;
+                  $line=86;
                   $result="";
                   if (true) break $try;
                 }
@@ -281,7 +281,7 @@ public final class E_UnZIP {
           }
         }
       }
-      $line=83;
+      $line=88;
       $rethrow(new RuntimeException("The function \"h1(q:Object,s:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -296,18 +296,18 @@ public final class E_UnZIP {
       java.util.Iterator $v8=GCollections.unmodifiableCollection($v7).iterator();
       Object last=$v8.next();
       Object count=$v8.next();
-      $line=86;
+      $line=91;
       if ($opEqualY(s,'$')) {
-        $line=86;
+        $line=91;
         $result="$";
         if (true) break $try;
       }
       else {
-        $line=87;
+        $line=92;
         $result="";
         if (true) break $try;
       }
-      $line=89;
+      $line=94;
       $rethrow(new RuntimeException("The function \"h1(\u27E8last,count\u27E9:java.lang.Iterable,s:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -319,10 +319,10 @@ public final class E_UnZIP {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=91;
+      $line=96;
       $result="";
       if (true) break $try;
-      $line=92;
+      $line=97;
       $rethrow(new RuntimeException("The function \"g(q:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -334,18 +334,18 @@ public final class E_UnZIP {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=95;
+      $line=100;
       if ($opEqualY(n,0)) {
-        $line=95;
+        $line=100;
         $result="";
         if (true) break $try;
       }
       else {
-        $line=96;
+        $line=101;
         $result=$opAdditY($invokeMethod(String.class,"valueOf",true,null,new Object[]{c}),E_UnZIP.starN(c,$opSubtrY(n,1)));
         if (true) break $try;
       }
-      $line=98;
+      $line=103;
       $rethrow(new RuntimeException("The function \"starN(c:Object,n:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {

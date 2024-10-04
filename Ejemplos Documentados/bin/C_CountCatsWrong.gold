@@ -7,6 +7,8 @@
 //  Attempts to Recognize  L = {w1ˆn:  w in {c,a,t}*,  n  = #_cat(W))}  
 //  However it may read c - a- t  without pushing 1
 //
+// Aceptaria cat y cat1, siendo que solo debe aceptar la segunda dentro del lenguaje definido
+//
 
 using gold.structures.automaton.*
 using gold.visualization.automaton.*
