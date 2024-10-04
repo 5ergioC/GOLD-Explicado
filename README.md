@@ -6,9 +6,9 @@ Es por eso que junto con este video de explicación subo este pequeño repositor
 
 ## Instalación de GOLD
 
-Se requiere [Java 8]([https://choosealicense.com/licenses/mit/](https://www.oracle.com/java/technologies/downloads/?er=221886)) para [Windows]([https://choosealicense.com/licenses/mit/](https://github.com/silviaTak/GoldKeplerWindows)) y [Mac]([https://choosealicense.com/licenses/mit/](https://github.com/FLAGlab/gold-mac)).
+Se requiere [Java 8](https://www.oracle.com/java/technologies/downloads/?er=221886) para [Windows](https://github.com/silviaTak/GoldKeplerWindows) y [Mac](https://github.com/FLAGlab/gold-mac).
 
-Para [Linux]([https://choosealicense.com/licenses/mit/](https://github.com/danielbolivar/gold-linux)) existe es port de el gran Daniel Bolivar
+Para [Linux](https://github.com/danielbolivar/gold-linux) existe es port de el gran Daniel Bolivar
 
 ## Descarga del proyecto
 
