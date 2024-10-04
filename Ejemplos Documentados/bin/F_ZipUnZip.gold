@@ -1,0 +1,42 @@
+// -----------------------
+// Silvia Takahashi
+// UNIVERSIDAD DE LOS ANDES
+//  Coder - Decoder
+//   Coder:  Zip
+//  Decoder: unzip
+//  
+// -----------------------
+
+
+using gold.**
+  
+   var A      
+     
+
+
+procedure main(args:String[]) begin
+	var sc:java.util.Scanner(System.$in)
+   
+   
+	if  args.length=0  then  A:= ('a'‥'c')
+	else	
+		A := {args[0].charAt(i) |  0 ≤ i < args[0].length()}\{'$'}
+    end
+	
+	
+   
+   coder:=D_ZIP.createTransducer(A)
+   
+   deCoder:=E_UnZIP.createTransducer(A)
+    
+    
+  //GAutomataFrame.show(coder)
+  //GAutomataFrame.show(deCoder)
+   
+ 	
+  Utilities.testCodeDecode (coder, deCoder)
+		
+end
+
+
+

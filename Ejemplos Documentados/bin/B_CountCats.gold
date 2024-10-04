@@ -1,0 +1,53 @@
+// -----------------------
+// Silvia Takahashi
+// UNIVERSIDAD DE LOS ANDES
+//------------------------------
+// 
+//  
+// Recognizes  L = {w1ˆn:  w in {c,a,t}*,  n  = #_cat(W))}  
+//
+//
+
+using gold.structures.automaton.*
+using gold.visualization.automaton.*
+
+procedure main(args:String[]) begin
+	GAutomataFrame.show(createAutomaton())
+end
+
+function createAutomaton():IPushdownAutomaton begin
+	Σ:={'c','a','t','1'}
+	Q:={0,1,"c","ca"} 
+	
+	// Definición de tokens del stack
+	Γ:= {'1'}
+	
+	q₀:=0
+	F:={1}
+	M:=GPushdownAutomaton(Q,Σ,Γ,q₀,F)
+	
+	M.delta(0,0,'a').ignore()
+	M.delta(0,"c",'c').ignore()
+	M.delta(0,0,'t').ignore()
+	M.delta(0,1,"").ignore()
+	
+	M.delta("c","c",'c').ignore()
+	M.delta("c",0,'t').ignore()
+	M.delta("c","ca",'a').ignore()
+	M.delta("c",1,"").ignore()
+	
+	M.delta("ca","c",'c').ignore()
+	M.delta("ca",0,'t').push("1")
+	M.delta("ca",0,'a').ignore()
+	M.delta("ca",1,"").ignore()
+	
+	M.delta(1,1,"1").pop("1")
+	
+	// Funciones adicionales: .$skip("a") / .pushOn("$","a") / .changeTop("B","ddBc") 
+	// Tal vez haya alguna que se me escape, ojala no
+	
+	return M
+end
+
+
+

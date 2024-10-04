@@ -1,0 +1,15 @@
+// Automaton type (ψ):
+ψ = TM
+// Turing Machine name (Z):
+Z = "TestCheck"
+// Turing Machine nodes (N):
+N(0) = "RR"
+N(1) = "W[a]W[Y]RW[N]LW[#]"
+// Turing Machine initial node (I):
+I = 0@0
+// Turing Machine edges (E):
+E(0,1) = "#"
+// Turing Machine layout (ξ)
+ξ(0)=(52.00,48.00)
+ξ(1)=(180.00,48.00)
+ξ(0,1)=(52.00,48.00,88.00,48.00,104.00,48.00,180.00,48.00)

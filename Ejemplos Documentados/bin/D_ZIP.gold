@@ -1,0 +1,98 @@
+// -----------------------
+// Silvia Takahashi
+// UNIVERSIDAD DE LOS ANDES
+//------------------------------
+// 
+//  ZIP
+//
+//  An automaton that reads a string of the form  w$ , w in A*	
+//  Produces a string where sequential substrings of length 2‥5 of the same symbol are
+//  replaced the the repeating symbol followed by the number of repeats
+//    
+//   By default  A = ('a' ‥ 'e'), it can be changed invoking the program with a string  of symbols. 
+//   A  will contain all the the symbols in the string
+//  
+using gold.**
+
+
+// Definición de variable para el alfabeto del problema
+var A
+
+procedure main(args:String[]) begin
+	
+	// Definir lenguaje
+	if  args.length=0  then  A:= ('a'‥'c')
+	else	
+		A := {args[0].charAt(i) |  0 ≤ i < args[0].length()}\{'$'}
+    end
+	
+	
+	zip:=createTransducer(A)
+    GAutomataFrame.show(zip)
+    Utilities.test(zip)
+end
+
+ 
+ 
+function createTransducer(Alph):ITransducer begin
+	A:= Alph
+	Q:= {⟨letter,count⟩| letter ∈ A,1≤count≤5}∪{"I","F"}
+	Σ:=A ∪ {'$'}
+	
+	// Definición lenguaje de salida
+	Σ´:=A ∪('2'‥'5')∪{'$'}
+	
+	q₀:="I"
+	F:={"F"}
+	return 	GDeterministicTransducer(Q,Σ,Σ´,q₀,F,d,g,h)
+end
+
+//Funciones de transición
+function d(q,σ) begin
+	if q="F" then
+		return "F"
+	elseif σ='$' then
+			return "F"
+		else
+			return ⟨σ,1⟩ 
+		end
+	end
+
+function d(⟨s,c⟩,a) begin
+	if a='$' then
+		 return "F"
+	elseif (a=s) and (c < 5)then
+			return ⟨a,c+1⟩ 
+	else		
+			return ⟨a,1⟩ // a !=s pr (a=s anc c=5)
+	end
+end
+
+function g(q) begin
+	return λ
+end
+
+// Funciones de escritura
+// No entiendo porque gold decide ver primero la función de escritura y despues la de estados, pero clave tenerlo en cuenta.
+// Tal vez debas pensar de forma diferente el problema a veces.
+function h(q,σ) begin
+   if q ="I"  and  σ='$'then return σ
+   else return λ
+	
+end
+end
+
+function h(⟨s,c⟩,a) begin
+	
+	if a = '$' and c = 1 then 
+		 return s +"$"
+	elseif  a = '$' then
+		 return String.valueOf(s)+String.valueOf(c)+"$" 
+	elseif (a=s) and (c < 5)then
+			return λ 
+	elseif c = 1 then		
+			return s
+	else return String.valueOf(s)+String.valueOf(c)	
+end 
+
+end

@@ -1,0 +1,44 @@
+// Import de las funciones de gold
+using gold.**
+
+// Llamado del main
+procedure main(args:String[]) begin
+	// Mostrar graficamente el automata creado
+	GAutomataFrame.show(createAutomaton())
+	// Test por consola del automata creado
+	Utilities.test(createAutomaton())
+
+
+end
+
+// Función de creación del automata
+function createAutomaton():IAutomaton begin
+	// Definición de estados
+	Q:={"_cat","c_at","ca_t","cat_"}
+	
+	// Definición de transiciones
+	Σ:={'c','a','t'}
+	
+	// Definición de estado inicial
+	q₀:="_cat"
+	
+	// Definición de estados finales
+	F:={"cat_"}
+	
+	// Función de transiciones
+	δ:=⟦⟦"_cat",'c',"c_at"⟧,
+		⟦"_cat",'a',"_cat"⟧,
+		⟦"_cat",'t',"_cat"⟧,
+		⟦"c_at",'c',"c_at"⟧,
+		⟦"c_at",'a',"ca_t"⟧,
+		⟦"c_at",'t',"_cat"⟧,
+		⟦"ca_t",'c',"c_at"⟧,
+		⟦"ca_t",'a',"_cat"⟧,
+		⟦"ca_t",'t',"cat_"⟧,
+		⟦"cat_",'c',"cat_"⟧,
+		⟦"cat_",'a',"cat_"⟧,
+		⟦"cat_",'t',"cat_"⟧⟧
+		
+	// Llamado al creador de Automatas de GOLD
+	return 	GDeterministicAutomaton(Q,Σ,q₀,F,δ)
+end

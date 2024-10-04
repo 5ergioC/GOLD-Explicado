@@ -1,0 +1,39 @@
+// -----------------------
+// Silvia Takahashi
+// UNIVERSIDAD DE LOS ANDES
+//------------------------------
+// 
+//  
+//  Attempts to Recognize  L = {w1ˆn:  w in {c,a,t}*,  n  = #_cat(W))}  
+//  However it may read c - a- t  without pushing 1
+//
+
+using gold.structures.automaton.*
+using gold.visualization.automaton.*
+
+procedure main(args:String[]) begin
+	GAutomataFrame.show(createAutomaton())
+end
+
+function createAutomaton():IPushdownAutomaton begin
+	Σ:={'c','a','t','1'}
+	Q:=  {0,1} 
+	Γ:= {'1'}
+	q₀:=0
+	F:={1}
+	M:=GPushdownAutomaton(Q,Σ,Γ,q₀,F)
+	
+	M.delta(0,0,'a').ignore()
+	M.delta(0,0,'c').ignore()
+	M.delta(0,0,'t').ignore()
+	M.delta(0,0,"cat").push("1")
+	M.delta(1,1,"1").pop("1")
+	
+	M.delta(0,1,"").ignore()
+	
+	
+	return M
+end
+
+
+

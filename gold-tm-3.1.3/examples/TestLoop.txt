@@ -1,0 +1,17 @@
+// Automaton type (ψ):
+ψ = TM
+// Turing Machine name (Z):
+Z = "TestLoop"
+// Turing Machine nodes (N):
+N(0) = "R"
+N(1) = "W[a]"
+// Turing Machine initial node (I):
+I = 1@0
+// Turing Machine edges (E):
+E(1,0) = ""
+E(0,1) = ""
+// Turing Machine layout (ξ)
+ξ(0)=(104.00,32.00)
+ξ(1)=(44.00,32.00)
+ξ(1,0)=(46.00,32.00,76.00,20.00,106.00,32.00)
+ξ(0,1)=(106.00,32.00,76.00,44.00,46.00,32.00)

@@ -1,0 +1,98 @@
+// -----------------------
+// Silvia Takahashi
+// UNIVERSIDAD DE LOS ANDES
+//------------------------------
+// 
+//  An automaton that decodes, that were coded with
+//  an automaton that reads a string of the form  w$ , w in A*	
+//  Produces a string where sequential substrings of length 2‥5 of the same symbol are
+//  replaced the the repeating symbol followed by the number of repeats
+//    
+//    
+//    
+//-----------------------
+//   By default  A = ('a' ‥ 'e'), it can be changed invoking the program with a string  of symbols. 
+//   A  will contain all the the symbols in the string
+//  
+using gold.**
+
+var A
+
+
+
+procedure main(args:String[]) begin
+	
+	if  args.length=0  then  A:= ('a'‥'c')
+	else	
+		A := {args[0].charAt(i) |  0 ≤ i < args[0].length()}\{'$'}
+    end
+	
+	
+	
+    unZip:=createTransducer(A)
+    //GAutomataFrame.show(unZip)
+    Utilities.test(unZip)
+end
+
+ 
+ 
+
+
+function createTransducer(Alph):ITransducer begin
+	A:= Alph
+	Q:= ({"I","F","E"}∪A) ∪ (A×(2‥4))
+	Σ:=A ∪('2'‥'5')∪{'$'}
+	Σ´:=A ∪{'$'}
+	q₀:="I"
+	F:={"F"}
+	return 	GDeterministicTransducer(Q,Σ,Σ´,q₀,F,δ1,g,h1)
+end
+
+function δ1(q,s) begin
+	if q in {"E","F"}  then return "E"
+	elseif s='$' then return  "F" 
+	elseif q="I" and s in ('2'‥'5') then return "E"
+	elseif q="I" then return s
+	elseif   q in A and s = '5' then return "I"
+	elseif	 q in A and s in ('2'‥'4')  then return  ⟨q,s-'0'⟩ // this is done to make sure that we don't have input like a2a3. '
+	elseif q  in A  and s=q then return "E"
+	elseif q in A and s in A then return  s
+   else return "E"
+	end
+end
+
+function δ1(⟨q,x⟩,s) begin
+	if s='$' then return  "F" 
+	elseif s in ('2'‥'5') then return "E"
+	elseif s = q then return "E"
+   else return s
+	end
+end
+
+
+
+function h1(q,s) begin
+	if q="F" or  q="E"  then return  λ		
+	elseif s='$' and  q in A then return q+"$" 
+	elseif s='$' then return "$"
+	elseif q="I" then return λ
+   elseif  s in ('2'‥'5') and q in A then return starN(q,(s-'0'))
+   	elseif q in A and s!=q  then return q
+   	else return λ
+	end
+end
+
+function h1(⟨last,count⟩,s) begin
+if s='$' then return "$"
+else return λ	
+end
+end
+function g(q) begin
+ return λ
+end
+
+function starN(c,n) begin // cˆn
+  if n = 0  then return λ
+  else  return String.valueOf(c)+starN(c,n-1)
+  end
+end
