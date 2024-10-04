@@ -26,6 +26,7 @@ function createAutomaton():IPushdownAutomaton begin
 	F:={1}
 	M:=GPushdownAutomaton(Q,Σ,Γ,q₀,F)
 	
+	// Estado actual, estado al que ira, lectura, función sobre el stack
 	M.delta(0,0,'a').ignore()
 	M.delta(0,"c",'c').ignore()
 	M.delta(0,0,'t').ignore()

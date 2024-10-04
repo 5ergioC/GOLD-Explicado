@@ -26,6 +26,7 @@ function createAutomaton():IAutomaton begin
 	F:={"cat_"}
 	
 	// Función de transiciones
+	// Estado actual, lectura, estado al que va
 	δ:=⟦⟦"_cat",'c',"c_at"⟧,
 		⟦"_cat",'a',"_cat"⟧,
 		⟦"_cat",'t',"_cat"⟧,

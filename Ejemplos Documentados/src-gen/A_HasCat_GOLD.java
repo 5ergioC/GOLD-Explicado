@@ -74,12 +74,12 @@ public final class A_HasCat_GOLD {
       Object q_0=$fix("_cat");
       $line=26;
       Object F=$fix(GCollections.asSet("cat_"));
-      $line=29;
+      $line=30;
       Object \u03B4=$fix(new Object[]{new Object[]{"_cat",'c',"c_at"},new Object[]{"_cat",'a',"_cat"},new Object[]{"_cat",'t',"_cat"},new Object[]{"c_at",'c',"c_at"},new Object[]{"c_at",'a',"ca_t"},new Object[]{"c_at",'t',"_cat"},new Object[]{"ca_t",'c',"c_at"},new Object[]{"ca_t",'a',"_cat"},new Object[]{"ca_t",'t',"cat_"},new Object[]{"cat_",'c',"cat_"},new Object[]{"cat_",'a',"cat_"},new Object[]{"cat_",'t',"cat_"}});
-      $line=43;
+      $line=44;
       $result=$invokeConstructor(GDeterministicAutomaton.class,new Object[]{Q,\u03A3,q_0,F,\u03B4});
       if (true) break $try;
-      $line=44;
+      $line=45;
       $rethrow(new RuntimeException("The function \"createAutomaton()\" did not return a value."));
     }
     catch (Throwable $throwable) {
