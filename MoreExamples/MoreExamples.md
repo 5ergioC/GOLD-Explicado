@@ -13,6 +13,8 @@ Este repositorio contiene 4 nuevos ejemplos de autómatas en el lenguaje **Gold*
 
 Este autómata acepta cadenas sobre el alfabeto `{0, 1}`. Las transiciones permiten alternar entre dos estados según los valores leídos.
 
+<img width="239" alt="Screenshot 2024-10-08 at 5 15 38 PM" src="https://github.com/user-attachments/assets/4946b323-4833-4c35-9b77-9bb10193c9ce">
+
 // Ejemplos de cadenas aceptadas:
 // "1": La cadena "1" lleva de q1 a q2.
 // "10": La cadena "10" lleva de q1 a q2 y luego regresa a q1.
@@ -26,6 +28,8 @@ Este autómata acepta cadenas sobre el alfabeto `{0, 1}`. Las transiciones permi
 
 ### Ejemplo 2: Autómata con tres estados y transiciones alternadas
 Este autómata trabaja con tres estados (q1, q2, y q3) y reconoce cadenas que alternan entre estos estados en función de las transiciones basadas en 0 y 1.
+
+<img width="266" alt="Screenshot 2024-10-08 at 5 16 16 PM" src="https://github.com/user-attachments/assets/2528e8ff-b50c-45da-831b-9dc8d281832e">
 
 Ejemplos de cadenas aceptadas:
 - "1": La cadena "1" lleva de q1 a q2.
@@ -42,6 +46,8 @@ Ejemplos de cadenas rechazadas:
 
 Este autómata acepta cadenas sobre el alfabeto `{a, b}` que contienen una cantidad **impar** de 'a's. Las 'b's no afectan el conteo.
 
+<img width="357" alt="Screenshot 2024-10-08 at 5 17 55 PM" src="https://github.com/user-attachments/assets/694bc372-dc56-4e30-aea0-875fd42618f2">
+
 Ejemplos de cadenas aceptadas:
 - "a": Una 'a' lleva de par a impar, lo que es aceptado.
 - "ab": Una 'a' lleva a impar, las 'b' no afectan el estado.
@@ -57,6 +63,8 @@ Ejemplos de cadenas rechazadas:
 - "babbb": Solo hay una 'a', pero termina en par ya que la última transición deja el estado en par.
 
 ### Ejemplo 4: Autómata con múltiples estados
+
+<img width="272" alt="Screenshot 2024-10-08 at 5 18 16 PM" src="https://github.com/user-attachments/assets/8912950f-880d-4d40-a4df-146b0d1c86d5">
 
 Este autómata tiene cinco estados (`s`, `q1`, `q2`, `r1`, `r2`) y reconoce cadenas que alternan entre transiciones definidas por los caracteres 'a' y 'b'.
 
