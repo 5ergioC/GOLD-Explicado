@@ -13,7 +13,6 @@ Este repositorio contiene 4 nuevos ejemplos de autómatas en el lenguaje **Gold*
 
 Este autómata acepta cadenas sobre el alfabeto `{0, 1}`. Las transiciones permiten alternar entre dos estados según los valores leídos.
 
-```java
 // Ejemplos de cadenas aceptadas:
 // "1": La cadena "1" lleva de q1 a q2.
 // "10": La cadena "10" lleva de q1 a q2 y luego regresa a q1.
