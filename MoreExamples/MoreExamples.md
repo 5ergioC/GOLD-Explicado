@@ -5,7 +5,7 @@ Este repositorio contiene 4 nuevos ejemplos de autómatas en el lenguaje **Gold*
 ## Instrucciones de uso
 
 1. Abre el proyecto de **Gold** en **Eclipse Kepler** (u otra versión de Eclipse) en el que ya tengas ejemplos documentados.
-2. Crea una nueva clase Java en tu proyecto existente.
+2. Copia y pega una de las clases de ahi o crea otro archivo gold.
 3. Copia y pega el código de los ejemplos provistos en este archivo dentro de la nueva clase Java.
 4. Ejecuta el código en Eclipse y observa los resultados gráficos del autómata.
 
