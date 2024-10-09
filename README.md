@@ -1,7 +1,7 @@
 # GOLD pero explicado
 
-Creado por: Sergio Castaño @5ergioC
-Colaborador: Juan Jose Diaz
+- Creado por: Sergio Castaño `@5ergioC`
+- Mas ejemplos por: Juan Jose Diaz `@jjdiazo1`
 
 GOLD (Graph Oriented Language Domain) se trata de una gran herramienta y serie de tesis creadas en la Universidad de los Andes. 
 Sin embargo para el estudiante de sistemas promedio que lo vea se dara cuenta muy pronto que no hay buena documentación para el curso de Lenguajes y Maquinas particularmente.
