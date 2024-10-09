@@ -7,6 +7,9 @@ GOLD (Graph Oriented Language Domain) se trata de una gran herramienta y serie d
 Sin embargo para el estudiante de sistemas promedio que lo vea se dara cuenta muy pronto que no hay buena documentación para el curso de Lenguajes y Maquinas particularmente.
 Es por eso que junto con este [video de explicación](https://youtu.be/kPAXy5ffoBc) subo este pequeño repositorio con documentación basica de los 3 principales automatas a utilizar.
 
+[![Video de explicacion](https://img.youtube.com/vi/kPAXy5ffoBc/0.jpg)](https://www.youtube.com/watch?v=https://www.youtube.com/watch?v=kPAXy5ffoBc)
+
+
 ## Instalación de GOLD
 
 Se requiere [Java 8](https://www.oracle.com/java/technologies/downloads/?er=221886) para [Windows](https://github.com/silviaTak/GoldKeplerWindows) y [Mac](https://github.com/FLAGlab/gold-mac).
