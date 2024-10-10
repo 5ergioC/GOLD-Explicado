@@ -136,5 +136,5 @@ Ejemplos de cadenas rechazadas:
 
 ### Conclusión
 
-Este conjunto de ejemplos proporciona más casos de autómatas finitos determinísticos (DFA) que pueden ser fácilmente integrados y ejecutados en proyectos Gold existentes dentro de Eclipse. Solo necesitas copiarlos en un proyecto ya abierto para extender el trabajo que ya tienes en curso.
+Este conjunto de ejemplos proporciona más casos de autómatas que pueden ser fácilmente integrados y ejecutados en proyectos Gold existentes dentro de Eclipse para aprender de Gold y de automatas y de los posibles lenguajes generados.
 
