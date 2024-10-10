@@ -97,6 +97,28 @@ Aca se introduce un estado de error que seria el Q1 en el que si va ya no vuelve
 
 Aca llamamos al estado de error T como abreviacion de trash.
 
+### Ejemplo 7: Automata de cantidad de a's multiplo de 3 AAA
+
+<img width="323" alt="Screenshot 2024-10-10 at 4 32 55 PM" src="https://github.com/user-attachments/assets/21a0f00d-cc23-45de-aa43-a61269bd7012">
+
+Este autómata tiene tres estados (`q0`, `q1`, `q2`) y reconoce cadenas sobre el alfabeto `{a, b}` donde la cantidad de 'a's es un múltiplo de 3. Las 'b's no afectan el estado y pueden aparecer cualquier cantidad de veces.
+
+Ejemplos de cadenas aceptadas:
+- "b": No hay 'a's, por lo tanto es múltiplo de 3 (0 'a's).
+- "aaab": Tres 'a's llevan de q0 a q1, luego a q2, y de regreso a q0.
+- "bbbaa": Las 'b's no afectan, y la secuencia de 'a' termina en q0.
+- "abababab": Alterna entre q0, q1, q2, y regresa a q0 después de cada 3 'a's.
+
+Ejemplos de cadenas rechazadas:
+- "a": Un solo 'a' lleva a q1, no es múltiplo de 3.
+- "aa": Dos 'a's llevan a q2, no es múltiplo de 3.
+- "aab": Dos 'a's llevan a q2, y 'b' no afecta, por lo tanto no es múltiplo de 3.
+- "abb": Un 'a' lleva a q1, no es múltiplo de 3.
+
+### Ejemplo 8: Automata que reconoce una b, dos a repetido muchas veces (baa)* 
+
+
+
 ### Conclusión
 
 Este conjunto de ejemplos proporciona más casos de autómatas finitos determinísticos (DFA) que pueden ser fácilmente integrados y ejecutados en proyectos Gold existentes dentro de Eclipse. Solo necesitas copiarlos en un proyecto ya abierto para extender el trabajo que ya tienes en curso.
