@@ -2,8 +2,7 @@ using gold.structures.automaton.*
 using gold.visualization.automaton.*
 
 // Este autómata acepta cadenas sobre el alfabeto a b
-// Las cadenas pueden tener cualquier cantidad de 'b', ya que no afecta el conteo de 'a'.
-// Ejemplos de cadenas aceptadas: ""
+// Ejemplos de cadenas aceptadas: "" lambda
 // Ejemplos de cadenas rechazadas: Cualquier palabra 
 
 // Automata que acepta AB exactamente, ni una mas ni una menos
@@ -41,17 +40,3 @@ function createAutomaton():IAutomaton begin
     // Creación del autómata determinístico
     return GDeterministicAutomaton(Q,Σ,q₀,F,δ)
 end
-
-// Ejemplos de cadenas aceptadas:
-// "a": Una 'a' lleva de par a impar, lo que es aceptado.
-// "ab": Una 'a' lleva a impar, las 'b' no afectan el estado.
-// "aba": Las 'a's alternan el estado, terminando en impar.
-// "bbabb": Solo la 'a' central afecta, llevando el estado a impar.
-// "baaa": Tres 'a's llevan el estado a impar.
-
-// Ejemplos de cadenas rechazadas:
-// "": No contiene ninguna 'a', por lo tanto es par.
-// "b": Solo contiene 'b', por lo que es par.
-// "aa": Dos 'a's llevan el estado de par a impar y luego de vuelta a par.
-// "bbaa": Las dos 'a's hacen que el estado final sea par.
-// "babbb": Solo hay una 'a', pero termina en par ya que la última transición deja el estado en par.
