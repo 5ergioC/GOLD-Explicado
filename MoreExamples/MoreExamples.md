@@ -113,10 +113,10 @@ Este autómata tiene cuatro estados (`q0`, `q1`, `q2`, `t`) y acepta únicamente
 - Cualquier otro carácter o combinación que no siga el patrón "ab" llevará al estado de trampa `t`, donde el autómata rechaza la cadena y se queda atrapado en ese estado.
 - Aca llamamos al estado de error T como abreviacion de trash o trampa.
 
-### Ejemplos de cadenas aceptadas:
+Ejemplos de cadenas aceptadas:
 - "ab": Es la única cadena que lleva el autómata de `q0` a `q2` sin pasar por el estado de trampa.
 
-### Ejemplos de cadenas rechazadas:
+Ejemplos de cadenas rechazadas:
 - "": La cadena vacía es rechazada porque no contiene "ab".
 - "a": Se mueve de `q0` a `q1`, pero falta la 'b' para completar el patrón.
 - "b": Se mueve directamente a `t` desde `q0` porque no comienza con 'a'.
