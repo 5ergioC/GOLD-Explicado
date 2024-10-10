@@ -1,0 +1,56 @@
+using gold.structures.automaton.*
+using gold.visualization.automaton.*
+
+// Este autómata acepta cadenas sobre el alfabeto {a, b}
+// que sigan el patrón (baa)*. Esto significa que la cadena debe consistir 
+// en cero o más repeticiones del patrón exacto 'baa'.
+// Si la cadena no sigue el patrón o contiene caracteres adicionales, 
+// será rechazada.
+// Ejemplos de cadenas aceptadas: "", "baa", "baabaa", "baabaabaa"
+// Ejemplos de cadenas rechazadas: "b", "aab", "ba", "baab"
+
+// Autómata que reconoce el lenguaje L2 = (baa)*
+
+procedure main(args:String[]) begin
+    GAutomataFrame.show(createAutomaton())
+    Utilities.test(createAutomaton())
+end
+
+function createAutomaton():IAutomaton begin
+    // Definición de estados
+    Q:={"q0", "q1", "q2", "t"}
+    
+    // Definición de alfabeto
+    Σ:={'a', 'b'}
+    
+    // Estado inicial
+    q₀:="q0"
+    
+    // Definición de estados finales
+    F:={"q0"}  // El estado final es q0, ya que se acepta cuando se completa el patrón 'baa'
+    
+    // Función de transiciones
+    δ:=⟦⟦"q0", 'b', "q1"⟧,  // Primer 'b' lleva de q0 a q1
+        ⟦"q1", 'a', "q2"⟧,  // Primer 'a' lleva de q1 a q2
+        ⟦"q2", 'a', "q0"⟧,  // Segundo 'a' lleva de q2 a q0 (patrón completo)
+        ⟦"q0", 'a', "t"⟧,   // Cualquier 'a' en q0 que no forme el patrón lleva al estado de trampa
+        ⟦"q1", 'b', "t"⟧,   // Cualquier 'b' extra en q1 lleva al estado de trampa
+        ⟦"q2", 'b', "t"⟧,   // Cualquier 'b' en q2 lleva al estado de trampa
+        ⟦"t", 'a', "t"⟧,    // En el estado de trampa, cualquier entrada se queda en trampa
+        ⟦"t", 'b', "t"⟧⟧    // Cualquier 'b' en estado de trampa también se queda en trampa
+    
+    // Creación del autómata determinístico
+    return GDeterministicAutomaton(Q,Σ,q₀,F,δ)
+end
+
+// Ejemplos de cadenas aceptadas:
+// "": No hay ninguna cadena, lo que es aceptado porque (baa)* incluye cero repeticiones.
+// "baa": Una repetición completa del patrón 'baa'.
+// "baabaa": Dos repeticiones consecutivas del patrón 'baa'.
+// "baabaabaa": Tres repeticiones del patrón 'baa'.
+
+// Ejemplos de cadenas rechazadas:
+// "b": La cadena comienza correctamente, pero falta 'aa'.
+// "aab": No sigue el patrón, y comienza con una 'a'.
+// "ba": La cadena comienza correctamente, pero le falta una 'a' al final.
+// "baab": Comienza correctamente, pero tiene un 'b' extra que rompe el patrón.

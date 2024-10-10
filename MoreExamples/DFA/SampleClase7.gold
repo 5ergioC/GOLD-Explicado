@@ -1,0 +1,52 @@
+using gold.structures.automaton.*
+using gold.visualization.automaton.*
+
+// Este autómata acepta cadenas sobre el alfabeto {a, b}
+// donde la cantidad de 'a's es un múltiplo de 3.
+// Las 'b's pueden aparecer cualquier cantidad de veces y no afectan la aceptación.
+// Ejemplos de cadenas aceptadas: "b", "aaab", "bbbaa", "abababab"
+// Ejemplos de cadenas rechazadas: "a", "aa", "aab", "abb"
+
+// Autómata que reconoce el lenguaje L1 = { w ∈ (a|b)* | #a(w) = 3k }
+
+procedure main(args:String[]) begin
+    GAutomataFrame.show(createAutomaton())
+    Utilities.test(createAutomaton())
+end
+
+function createAutomaton():IAutomaton begin
+    // Definición de estados
+    Q:={"q0", "q1", "q2"}
+    
+    // Definición de alfabeto
+    Σ:={'a', 'b'}
+    
+    // Estado inicial
+    q₀:="q0"
+    
+    // Definición de estados finales
+    F:={"q0"}  // Acepta si termina en q0, es decir, múltiplo de 3 'a's
+    
+    // Función de transiciones
+    δ:=⟦⟦"q0", 'a', "q1"⟧,  // Primer 'a', lleva de q0 a q1
+        ⟦"q0", 'b', "q0"⟧,  // 'b' no afecta, permanece en q0
+        ⟦"q1", 'a', "q2"⟧,  // Segundo 'a', lleva de q1 a q2
+        ⟦"q1", 'b', "q1"⟧,  // 'b' no afecta, permanece en q1
+        ⟦"q2", 'a', "q0"⟧,  // Tercer 'a', regresa a q0 (múltiplo de 3)
+        ⟦"q2", 'b', "q2"⟧⟧  // 'b' no afecta, permanece en q2
+    
+    // Creación del autómata determinístico
+    return GDeterministicAutomaton(Q,Σ,q₀,F,δ)
+end
+
+// Ejemplos de cadenas aceptadas:
+// "b": No hay 'a's, por lo tanto es múltiplo de 3 (0 'a's).
+// "aaab": Tres 'a's llevan de q0 a q1, luego a q2, y de regreso a q0.
+// "bbbaa": Las 'b's no afectan, y la secuencia termina en q1.
+// "abababab": Alterna entre q0, q1, q2, y regresa a q0 después de cada 3 'a's.
+
+// Ejemplos de cadenas rechazadas:
+// "a": Un solo 'a' lleva a q1, no es múltiplo de 3.
+// "aa": Dos 'a's llevan a q2, no es múltiplo de 3.
+// "aab": Dos 'a's llevan a q2, y 'b' no afecta, por lo tanto no es múltiplo de 3.
+// "abb": Un 'a' lleva a q1, no es múltiplo de 3.
