@@ -5,9 +5,15 @@ Este repositorio contiene 4 nuevos ejemplos de autómatas en el lenguaje **Gold*
 ## Instrucciones de uso
 
 1. Abre el proyecto de **Gold** en **Eclipse Kepler** (u otra versión de Eclipse) en el que ya tengas ejemplos documentados.
-2. Copia y pega una de las clases de ahi o crea otro archivo gold.
-3. Copia y pega el código de los ejemplos provistos en este archivo dentro de la nueva clase Java.
-4. Ejecuta el código en Eclipse y observa los resultados gráficos del autómata.
+2. Corre los archivos .gold o si quieres copia y pega su codigo dentro de uno que tengas en tu proyecto si te da pereza importarlo en gold Kepler.
+3. Ejecuta el código en Eclipse en el icono de correr programa de gold y observa los resultados gráficos del autómata.
+4. 
+<img width="280" alt="Screenshot 2024-10-10 at 4 16 35 PM" src="https://github.com/user-attachments/assets/6fb989d5-93b5-4c5f-9334-3b9e2aad9947">
+
+## Estructura
+Tenemos ejemplos para cada uno de los tipos de automatas vistos en el curso, encuentralos en sus respectivas carpetas. Aca mas abajo documentaremos cada uno.
+
+## DFA
 
 ### Ejemplo 1: Autómata que alterna entre dos estados (q1 y q2)
 
