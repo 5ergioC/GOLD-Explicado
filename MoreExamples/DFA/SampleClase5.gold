@@ -2,7 +2,6 @@ using gold.structures.automaton.*
 using gold.visualization.automaton.*
 
 // Este autómata acepta cadenas sobre el alfabeto a b
-// Las cadenas pueden tener cualquier cantidad de 'b', ya que no afecta el conteo de 'a'.
 // Ejemplos de cadenas aceptadas: ""
 // Ejemplos de cadenas rechazadas: Cualquier palabra 
 
