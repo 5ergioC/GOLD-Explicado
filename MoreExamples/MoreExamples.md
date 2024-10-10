@@ -89,9 +89,12 @@ Ejemplos de cadenas rechazadas:
 ### Ejemplo 5: Autómata que solo reconoce la cadena vacia.
 <img width="257" alt="Screenshot 2024-10-10 at 4 08 44 PM" src="https://github.com/user-attachments/assets/05a369bf-325d-4a48-874a-e52f08562dc8">
 
+Aca se introduce un estado de error que seria el Q1 en el que si va ya no vuelve.
+
 ### Ejemplo 4: Autómata que reconoce una cadena limitada, solo una A y un B
 
 <img width="339" alt="Screenshot 2024-10-10 at 4 08 20 PM" src="https://github.com/user-attachments/assets/df343808-0356-49d3-9993-5952157037f3">
+Aca llamamos al estado de error T como abreviacion de trash.
 
 ### Conclusión
 
