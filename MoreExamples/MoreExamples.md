@@ -117,6 +117,21 @@ Ejemplos de cadenas rechazadas:
 
 ### Ejemplo 8: Automata que reconoce una b, dos a repetido muchas veces (baa)* 
 
+<img width="467" alt="Screenshot 2024-10-10 at 4 36 04 PM" src="https://github.com/user-attachments/assets/192a790e-b3b5-473e-8b96-3fcf079cc0f7">
+
+Este autómata tiene cuatro estados (`q0`, `q1`, `q2`, `t`) y reconoce cadenas sobre el alfabeto `{a, b}` que sigan el patrón `(baa)*`. Esto significa que la cadena debe consistir en cero o más repeticiones exactas del patrón 'baa'. Si la cadena contiene caracteres adicionales o no sigue el patrón, será rechazada.
+
+Ejemplos de cadenas aceptadas:
+- "": No hay ninguna cadena, lo que es aceptado porque (baa)* incluye cero repeticiones.
+- "baa": Una repetición completa del patrón 'baa'.
+- "baabaa": Dos repeticiones consecutivas del patrón 'baa'.
+- "baabaabaa": Tres repeticiones del patrón 'baa'.
+
+Ejemplos de cadenas rechazadas:
+- "b": La cadena comienza correctamente, pero falta 'aa'.
+- "aab": No sigue el patrón, y comienza con una 'a'.
+- "ba": La cadena comienza correctamente, pero le falta una 'a' al final.
+- "baab": Comienza correctamente, pero tiene un 'b' extra que rompe el patrón.
 
 
 ### Conclusión
