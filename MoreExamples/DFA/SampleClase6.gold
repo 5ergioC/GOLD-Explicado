@@ -2,8 +2,8 @@ using gold.structures.automaton.*
 using gold.visualization.automaton.*
 
 // Este autómata acepta cadenas sobre el alfabeto a b
-// Ejemplos de cadenas aceptadas: "" lambda
-// Ejemplos de cadenas rechazadas: Cualquier palabra 
+// Ejemplos de cadenas aceptadas: "ab" 
+// Ejemplos de cadenas rechazadas: Cualquier palabra que no sea ab
 
 // Automata que acepta AB exactamente, ni una mas ni una menos
 
