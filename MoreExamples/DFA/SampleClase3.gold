@@ -1,0 +1,56 @@
+using gold.structures.automaton.*
+using gold.visualization.automaton.*
+
+// Este autómata acepta cadenas sobre el alfabeto {a, b}.
+// El lenguaje que reconoce este autómata incluye secuencias que comienzan en el estado inicial 's' 
+// y pueden ir a los estados q1 o r1 dependiendo de si se lee una 'a' o una 'b', respectivamente. 
+// Desde q1, se puede transitar entre q1 y q2 con las letras 'a' y 'b'. De manera similar, r1 y r2 permiten transiciones con 'b' y 'a'.
+// Ejemplos de cadenas aceptadas: "a", "b", "aa", "bb", "ababa", "babab".
+// Ejemplos de cadenas rechazadas: "aaab", "baab", "abbbba".
+
+procedure main(args:String[]) begin
+    GAutomataFrame.show(createAutomaton())
+    Utilities.test(createAutomaton())
+end
+
+function createAutomaton():IAutomaton begin
+    // Definición de estados
+    Q:={"s", "q1", "q2", "r1", "r2"}
+    
+    // Definición de alfabeto
+    Σ:={'a', 'b'}
+    
+    // Estado inicial
+    q₀:="s"
+    
+    // Definición de estados finales
+    F:={"q1", "r1"}  // q1 y r1 son los estados finales.
+    
+    // Función de transiciones
+    δ:=⟦⟦"s", 'a', "q1"⟧,
+        ⟦"s", 'b', "r1"⟧,
+        ⟦"q1", 'a', "q1"⟧,
+        ⟦"q1", 'b', "q2"⟧,
+        ⟦"q2", 'a', "q1"⟧,
+        ⟦"q2", 'b', "q2"⟧,
+        ⟦"r1", 'b', "r1"⟧,
+        ⟦"r1", 'a', "r2"⟧,
+        ⟦"r2", 'b', "r1"⟧,
+        ⟦"r2", 'a', "r2"⟧⟧
+    
+    // Creación del autómata determinístico
+    return GDeterministicAutomaton(Q,Σ,q₀,F,δ)
+end
+
+// Ejemplos de cadenas aceptadas:
+// "a": Lleva de s a q1, que es un estado final.
+// "b": Lleva de s a r1, que es un estado final.
+// "aa": Permanece en q1, un estado final.
+// "bb": Permanece en r1, un estado final.
+// "ababa": Alterna entre q1, q2, y r1, terminando en r1.
+// "babab": Alterna entre r1, r2 y q1, terminando en q1.
+
+// Ejemplos de cadenas rechazadas:
+// "aaab": Alterna entre q1 y q2 pero termina en un estado no final.
+// "baab": Alterna entre r1 y r2 pero termina en un estado no final.
+// "abbbba": Termina en un estado no final después de varias transiciones.

@@ -1,0 +1,49 @@
+using gold.structures.automaton.*
+using gold.visualization.automaton.*
+
+// Autómata que acepta cadenas sobre el alfabeto {0, 1}
+// El lenguaje que reconoce este autómata incluye cadenas que comienzan en q1,
+// permiten transiciones entre q2 y q3 con ciertos patrones de 0's y 1's.
+// Ejemplos de cadenas aceptadas:  "1", "10", "100", "1000", "101", "1001"
+// Ejemplos de cadenas rechazadas: "0", "11", "001"
+
+procedure main(args:String[]) begin
+    GAutomataFrame.show(createAutomaton())
+    Utilities.test(createAutomaton())
+end
+
+function createAutomaton():IAutomaton begin
+    // Definición de estados
+    Q:={"q1", "q2", "q3"}
+    
+    // Definición de alfabeto
+    Σ:={'0', '1'}
+    
+    // Estado inicial
+    q₀:="q1"
+    
+    // Definición de estados finales
+    F:={"q2"}  // Puedes ajustar esto si hay más estados finales
+    
+    // Función de transiciones
+    δ:=⟦⟦"q1",'0',"q1"⟧,
+        ⟦"q1",'1',"q2"⟧,
+        ⟦"q2",'1',"q2"⟧,
+        ⟦"q2",'0',"q3"⟧,
+        ⟦"q3",'0',"q2"⟧,
+        ⟦"q3",'1',"q2"⟧⟧
+    
+    // Creación del autómata determinístico
+    return GDeterministicAutomaton(Q,Σ,q₀,F,δ)
+end
+
+// Ejemplos de cadenas aceptadas:
+// "1": La cadena "1" lleva de q1 a q2.
+// "10": La cadena "10" lleva de q1 a q2 y luego a q3, pero regresa a q2.
+// "100", "101", "1001": Estas cadenas siguen patrones similares, regresando a q2.
+
+// Ejemplos de cadenas rechazadas:
+// "0": Se queda en q1 y nunca llega a q2.
+// "11": Pasa a q2, pero al intentar leer otro '1' sigue en q2 sin satisfacer las transiciones correctas.
+// "001": Nunca sale de q1.
+

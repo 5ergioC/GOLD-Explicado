@@ -1,0 +1,46 @@
+using gold.structures.automaton.*
+using gold.visualization.automaton.*
+
+// Este autómata acepta cadenas sobre el alfabeto {0, 1}.
+// El lenguaje que reconoce este autómata está compuesto por cadenas que pueden alternar entre los estados q1 y q2, 
+// pero si una cadena comienza con 0, se mantendrá en q1 hasta recibir un 1. 
+// Una vez en q2, puede regresar a q1 si recibe un 0, o permanecer en q2 si recibe un 1.
+
+procedure main(args:String[]) begin
+    GAutomataFrame.show(createAutomaton())
+    Utilities.test(createAutomaton())
+end
+
+function createAutomaton():IAutomaton begin
+    // Definición de estados
+    Q:={"q1", "q2"}
+    
+    // Definición de alfabeto
+    Σ:={'0', '1'}
+    
+    // Estado inicial
+    q₀:="q1"
+    
+    // Definición de estados finales (puedes ajustar si hay estados finales específicos)
+    F:={}
+    
+    // Función de transiciones
+    δ:=⟦⟦"q1",'0',"q1"⟧,
+        ⟦"q1",'1',"q2"⟧,
+        ⟦"q2",'0',"q1"⟧,
+        ⟦"q2",'1',"q2"⟧⟧
+    
+    // Creación del autómata determinístico
+    return GDeterministicAutomaton(Q,Σ,q₀,F,δ)
+end
+
+// Ejemplos de cadenas aceptadas:
+// "1": La cadena "1" lleva de q1 a q2.
+// "10": La cadena "10" lleva de q1 a q2 y luego regresa a q1.
+// "101": La cadena "101" alterna entre q1 y q2, terminando en q2.
+// "1001": La cadena "1001" alterna y termina en q2 después de varios cambios.
+
+// Ejemplos de cadenas rechazadas:
+// "0": Se queda en q1 y nunca llega a q2.
+// "11": La cadena "11" permanece en q2, pero nunca regresa a q1.
+// "00": Se queda en q1, sin alcanzar nunca el estado q2.

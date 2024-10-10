@@ -1,0 +1,52 @@
+using gold.structures.automaton.*
+using gold.visualization.automaton.*
+
+// Este autómata acepta cadenas sobre el alfabeto {a, b} 
+// que contienen una cantidad impar de letras 'a'. 
+// Las cadenas pueden tener cualquier cantidad de 'b', ya que no afecta el conteo de 'a'.
+// Ejemplos de cadenas aceptadas: "a", "ab", "aba", "bbabb", "baaa"
+// Ejemplos de cadenas rechazadas: "", "b", "aa", "bbaa", "babbb"
+
+// Autómata que reconoce el lenguaje L = { w \in (a|b)^* | w tiene una cantidad impar de 'a's }
+
+procedure main(args:String[]) begin
+    GAutomataFrame.show(createAutomaton())
+    Utilities.test(createAutomaton())
+end
+
+function createAutomaton():IAutomaton begin
+    // Definición de estados
+    Q:={"par", "impar"}
+    
+    // Definición de alfabeto
+    Σ:={'a', 'b'}
+    
+    // Estado inicial
+    q₀:="par"  // Empezamos asumiendo una cantidad par de 'a's (0 'a's es par)
+    
+    // Definición de estados finales
+    F:={"impar"}  // Queremos aceptar cuando la cantidad de 'a's es impar.
+    
+    // Función de transiciones
+    δ:=⟦⟦"par", 'a', "impar"⟧,  // Con una 'a', vamos de par a impar
+        ⟦"par", 'b', "par"⟧,    // Las 'b' no afectan el conteo de 'a's
+        ⟦"impar", 'a', "par"⟧,  // Con otra 'a', volvemos a par
+        ⟦"impar", 'b', "impar"⟧⟧  // Las 'b' no afectan cuando estamos en impar
+    
+    // Creación del autómata determinístico
+    return GDeterministicAutomaton(Q,Σ,q₀,F,δ)
+end
+
+// Ejemplos de cadenas aceptadas:
+// "a": Una 'a' lleva de par a impar, lo que es aceptado.
+// "ab": Una 'a' lleva a impar, las 'b' no afectan el estado.
+// "aba": Las 'a's alternan el estado, terminando en impar.
+// "bbabb": Solo la 'a' central afecta, llevando el estado a impar.
+// "baaa": Tres 'a's llevan el estado a impar.
+
+// Ejemplos de cadenas rechazadas:
+// "": No contiene ninguna 'a', por lo tanto es par.
+// "b": Solo contiene 'b', por lo que es par.
+// "aa": Dos 'a's llevan el estado de par a impar y luego de vuelta a par.
+// "bbaa": Las dos 'a's hacen que el estado final sea par.
+// "babbb": Solo hay una 'a', pero termina en par ya que la última transición deja el estado en par.
