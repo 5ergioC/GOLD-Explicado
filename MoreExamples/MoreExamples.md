@@ -89,13 +89,41 @@ Ejemplos de cadenas rechazadas:
 ### Ejemplo 5: Autómata que solo reconoce la cadena vacia.
 <img width="257" alt="Screenshot 2024-10-10 at 4 08 44 PM" src="https://github.com/user-attachments/assets/05a369bf-325d-4a48-874a-e52f08562dc8">
 
-Aca se introduce un estado de error que seria el Q1 en el que si va ya no vuelve.
+Este autómata tiene dos estados (`q0`, `q1`) y reconoce únicamente la cadena vacía (λ) sobre el alfabeto `{a, b}`. Cualquier otra cadena que contenga 'a' o 'b' será rechazada. El estado inicial `q0` es también el único estado de aceptación, y cualquier transición a `q1` no acepta la cadena.
+
+Ejemplos de cadenas aceptadas:
+- "": La cadena vacía es aceptada.
+
+Ejemplos de cadenas rechazadas:
+- Cualquier cadena que contenga 'a' o 'b', como "a", "b", "ab", "ba", etc.
+
+Este autómata es útil cuando se requiere validar la ausencia de caracteres en una entrada, aceptando únicamente la palabra vacía.
+
+Aca se introduce un **estado de error** que seria el Q1 en el que si va ya no vuelve.
 
 ### Ejemplo 6: Autómata que reconoce una cadena limitada, solo una A y un B
 
 <img width="339" alt="Screenshot 2024-10-10 at 4 08 20 PM" src="https://github.com/user-attachments/assets/df343808-0356-49d3-9993-5952157037f3">
 
-Aca llamamos al estado de error T como abreviacion de trash.
+Este autómata tiene cuatro estados (`q0`, `q1`, `q2`, `t`) y acepta únicamente la cadena "ab" sobre el alfabeto `{a, b}`. El estado `t` es un estado de trampa al que se transita si la cadena no sigue el patrón exacto "ab", y cualquier entrada posterior será rechazada.
+
+- El autómata comienza en el estado `q0`.
+- Si lee una 'a', se mueve a `q1`.
+- Si lee una 'b' después de la 'a', se mueve a `q2`, que es el estado de aceptación.
+- Cualquier otro carácter o combinación que no siga el patrón "ab" llevará al estado de trampa `t`, donde el autómata rechaza la cadena y se queda atrapado en ese estado.
+- Aca llamamos al estado de error T como abreviacion de trash o trampa.
+
+### Ejemplos de cadenas aceptadas:
+- "ab": Es la única cadena que lleva el autómata de `q0` a `q2` sin pasar por el estado de trampa.
+
+### Ejemplos de cadenas rechazadas:
+- "": La cadena vacía es rechazada porque no contiene "ab".
+- "a": Se mueve de `q0` a `q1`, pero falta la 'b' para completar el patrón.
+- "b": Se mueve directamente a `t` desde `q0` porque no comienza con 'a'.
+- "aa", "bb", "ba", "abb", "aab": Cualquier combinación que no sea exactamente "ab" llevará el autómata al estado de trampa `t`.
+
+Este autómata es útil cuando se quiere aceptar exactamente la secuencia "ab" y rechazar cualquier otra cadena.
+
 
 ### Ejemplo 7: Automata de cantidad de a's multiplo de 3 AAA
 
